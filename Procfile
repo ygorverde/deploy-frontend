@@ -1,1 +1,1 @@
-web: node dist/index.html
+web: node dist/js/app.2956bf4b.js
