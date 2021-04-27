@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 export const userKey = '__knowledge_user'
-export const baseApiUrl = 'https://knowledgefrontened.herokuapp.com/'
+export const baseApiUrl = 'http://192.168.1.102:3000'
 
 export function showError(e) {
     if(e && e.response && e.response.data) {
