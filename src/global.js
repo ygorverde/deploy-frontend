@@ -1,8 +1,7 @@
 import Vue from 'vue'
 
 export const userKey = '__knowledge_user'
-// export const baseApiUrl = process.env.VUE_APP_API_URL
-export const baseApiUrl = "https://knowledgebackend.herokuapp.com"
+export const baseApiUrl = process.env.VUE_APP_API_URL
 
 export function showError(e) {
     if(e && e.response && e.response.data) {
