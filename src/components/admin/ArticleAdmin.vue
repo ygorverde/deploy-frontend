@@ -44,8 +44,9 @@
         </b-form>
         <hr>
         <b-pagination size="md" v-model="page" :total-rows="count" :per-page="limit" align="center"/>
-        <b-table striped hover isRowHeader :items="articles" :fields="fields" small light responsive="true">
-            <template slot="actions" slot-scope="data" :fixed="true">
+        <b-table sort-icon-left sticky-header :fixed="fixed" striped hover isRowHeader small light head-variant="dark" 
+        :items="articles" :fields="fields">
+            <template v-slot:cell(actions)="data" class="actions">
                 <b-button variant="warning" @click="loadArticle(data.item)" class="mr-2" size="sm" >
                     <i class="fa fa-pencil"></i>
                 </b-button>
@@ -69,6 +70,7 @@ export default {
     // Atributo data aponta para uma função que retorna um objeto.
     return {
       mode: "save",
+      fixed: true,
       article: {},
       articles: [],
       categories: [],
@@ -80,7 +82,7 @@ export default {
         { key: "id", label: "Código", sortable: true },
         { key: "name", label: "Nome", sortable: true },
         { key: "description", label: "Descrição", sortable: true },
-        { key: "actions", label: "Ações" },
+        { key: "actions", label: "Ações", sortable: false },
       ],
     };
   },
@@ -155,5 +157,9 @@ export default {
 </script>
 
 <style>
+template.actions > a{
+  display: none;
+  color: blue;
+}
 </style>
 

@@ -54,6 +54,10 @@ export default {
 </script>
 
 <style>
+    .tree-anchor span{
+        color: #FFF;
+    } 
+
     .menu {
         grid-area: menu;
         background: linear-gradient(to right, #232526, #414345);
