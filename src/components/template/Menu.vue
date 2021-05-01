@@ -54,14 +54,13 @@ export default {
 </script>
 
 <style>
-    .tree-anchor span{
+    .tree span{
         color: #FFF;
     } 
 
     .menu {
         grid-area: menu;
-        background: linear-gradient(to right, #232526, #414345);
-
+        background: linear-gradient(147deg, #000000 0%, #434343 74%);
         display: flex;
         flex-direction: column;
         flex-wrap: wrap; /* Permitindo quebra de linha */

@@ -157,9 +157,6 @@ export default {
 </script>
 
 <style>
-template.actions > a{
-  display: none;
-  color: blue;
-}
+
 </style>
 

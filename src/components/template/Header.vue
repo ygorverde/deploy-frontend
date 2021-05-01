@@ -37,8 +37,8 @@ export default {
 <style>
     .header {
         grid-area: header;
-        background: linear-gradient(to right, #1e469a, #49a7c1);
-
+        background-color:  rgb(2,0,36);
+        background-image: linear-gradient(147deg, #000000 0%, #434343 74%);
         display: flex; /* Direção Row */
         justify-content: center; /* Justificando o conteúdo na linha MainAxis (X)*/
         align-items: center; /* Centralizando no CrossAxis (Y)*/
