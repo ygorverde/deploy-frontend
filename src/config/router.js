@@ -14,7 +14,8 @@ Vue.use(VueRouter)
 const routes = [{
     name: 'home',
     path: '/',
-    component: Home
+    component: Home,
+    meta: { requiresUserLogged: true }
 }, {
     name: 'adminPages',
     path: '/admin',
@@ -31,7 +32,8 @@ const routes = [{
 }, {
     name: 'auth',
     path: '/auth',
-    component: Auth
+    component: Auth,
+    meta: { requiresUser: true }
 }]
 
 const router =  new VueRouter({
@@ -48,13 +50,22 @@ router.beforeEach((to, from, next) => {
     } else {
         next()
     }
+
+    if(to.matched.some(record => record.meta.requiresUser)){
+        const user = JSON.parse(json)
+        user ? next({ path: '/' }) : next()
+    }else {
+        next()
+    }
+
+    if(to.matched.some(record => record.meta.requiresUserLogged)){
+        const user = JSON.parse(json)
+        !user ? next({ path: '/auth' }) : next()
+    }else {
+        next()
+    }
+
+
 })
 
 export default router
-
-// const router = new VueRouter({
-//     mode: 'history',
-//     routes: routes
-// })
-
-// export default router
