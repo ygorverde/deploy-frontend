@@ -10,10 +10,7 @@ app.get('*', (req, res) => {
   });
 
 const port = process.env.PORT || 8080
-const hostname = process.env.VUE_APP_BASEURL
 
-app.listen(port, hostname, () => {
-    console.log("Listening at http://%s:%s/", hostname, port);
-  });
+app.listen(port)
 
 console.log('Escutando na porta: ' + port)
